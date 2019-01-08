@@ -33,6 +33,8 @@ parts:
       - libcanberra-gtk-module
       - libgnome-keyring0
       - libgtk-3-0
+    after:
+      - desktop-gtk3
 
 apps:
   inkdrop:
