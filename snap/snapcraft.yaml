@@ -15,16 +15,15 @@ architectures:
 
 parts:
   inkdrop:
-    install: |
+    plugin: dump
+    source: https://api.inkdrop.app/download/linux/deb
+    source-type: deb
+    override-build: |
       DEB_API="https://api.inkdrop.app/download/linux/deb"
       DEB_URL=$(curl -w "%{url_effective}\n" -I -L -s -S "${DEB_API}" -o /dev/null)
       VERSION=$(echo "${DEB_URL}" | cut -d'/' -f4 | tr -d 'v')
       echo $VERSION > $SNAPCRAFT_STAGE/version
-    plugin: dump
-    source: https://api.inkdrop.app/download/linux/deb
-    source-type: deb
-    # Correct path to icon.
-    prepare: |
+      # Correct path to icon.
       sed -i 's|Icon=inkdrop|Icon=/usr/share/pixmaps/inkdrop\.png|g' usr/share/applications/inkdrop.desktop
     build-packages:
       - curl
@@ -36,7 +35,20 @@ parts:
 
 apps:
   inkdrop:
-    command: bin/desktop-launch $SNAP/usr/share/inkdrop/inkdrop
+    command: bin/desktop-launch $SNAP/usr/bin/inkdrop
     desktop: usr/share/applications/inkdrop.desktop
+    environment:
+      TMPDIR: $XDG_RUNTIME_DIR
+    plugs:
+      - browser-support
+      - desktop
+      - desktop-legacy
+      - gsettings
+      - home
+      - mount-observe
+      - network
+      - opengl
+      - wayland
+      - x11
   ipm:
-    command: bin/desktop-launch $SNAP/usr/bin/ipm
+    command: bin/desktop-launch $SNAP/usr/lib/inkdrop/resources/app/ipm/bin/ipm
