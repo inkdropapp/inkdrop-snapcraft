@@ -16,6 +16,7 @@ architectures:
 parts:
   inkdrop:
     plugin: dump
+    # source: /home/nora/Developments/inkdrop-desktop/dist/inkdrop_3.25.0-beta.0_amd64.deb
     source: https://api.inkdrop.app/download/linux/deb
     source-type: deb
     override-build: |
@@ -25,16 +26,25 @@ parts:
       VERSION=$(echo "${DEB_URL}" | cut -d'/' -f4 | tr -d 'v')
       echo $VERSION > $SNAPCRAFT_STAGE/version
       # Correct path to icon.
-      sed -i 's|Icon=inkdrop|Icon=/usr/share/pixmaps/inkdrop\.png|g' usr/share/applications/inkdrop.desktop
+      sed -i 's|Icon=inkdrop|Icon=/usr/share/pixmaps/inkdrop\.png|g' ${SNAPCRAFT_PART_INSTALL}/usr/share/applications/inkdrop.desktop
     build-packages:
       - curl
     stage-packages:
-      - libsecret-1-0
-      - libcanberra-gtk-module
       - libgnome-keyring0
-      - libgtk-3-0
+      - libcanberra-gtk-module
+      - libsecret-1-0
+      - libglu1-mesa
+      - libxkbfile1
+      - libasound2
+      - libgconf2-4
+      - libnotify4
+      - libnspr4
+      - libnss3
+      - libpulse0
+      - libxss1
+      - libxtst6
     after:
-      - desktop-gtk3
+      - desktop-gtk2
 
 apps:
   inkdrop:
@@ -51,6 +61,8 @@ apps:
       - mount-observe
       - network
       - opengl
+      - pulseaudio
+      - unity7
       - wayland
       - x11
   ipm:
