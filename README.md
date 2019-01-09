@@ -9,7 +9,7 @@ distributions.</p>
 
 <!-- Uncomment and modify this when you are provided a build status badge
 <p align="center">
-<a href="https://build.snapcraft.io/user/snapcrafters/fork-and-rename-me"><img src="https://build.snapcraft.io/badge/snapcrafters/fork-and-rename-me.svg" alt="Snap Status"></a>
+<a href="https://build.snapcraft.io/user/snapcrafters/inkdrop"><img src="https://build.snapcraft.io/badge/snapcrafters/inkdrop.svg" alt="Snap Status"></a>
 </p>
 -->
 
@@ -20,17 +20,14 @@ distributions.</p>
 ## Install
 
     sudo snap install inkdrop
+    # Allow the app to access to your keyring
+    sudo snap connect inkdrop:password-manager-service
 
-<!-- Uncomment and modify this when your snap is available on the store
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/inkdrop)
--->
 
 ([Don't have snapd installed?](https://snapcraft.io/docs/core/install))
 
 ## Remaining tasks
-<!-- Uncomment and modify this when you have a screenshot
-![inkdrop](screenshot.png?raw=true "inkdrop")
--->
 
 Snapcrafters ([join us](https://forum.snapcraft.io/t/join-snapcrafters/1325)) 
 are working to land snap install documentation and

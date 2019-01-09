@@ -8,7 +8,7 @@ description: |
   You can organize your progress in a clean, uniform way that's focused on ensuring that the information is easy to work through and can be read uniformly.
 
 grade: stable
-confinement: devmode # use 'strict' once you have the right plugs and slots
+confinement: strict
 
 architectures:
   - build-on: amd64
@@ -65,5 +65,6 @@ apps:
       - unity7
       - wayland
       - x11
+      - password-manager-service
   ipm:
     command: bin/desktop-launch $SNAP/usr/lib/inkdrop/resources/app/ipm/bin/ipm
