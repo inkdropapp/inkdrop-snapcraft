@@ -44,10 +44,10 @@ upstream so Inkdrop can authoritatively publish future releases.
   - [x] Add a screenshot to this `README.md`
   - [x] Publish the `devmode` snap in the Snap store edge channel
   - [x] Add install instructions to this `README.md`
-  - [ ] Update snap store metadata, icons and screenshots
-  - [ ] Convert the snap to `strict` confinement, or `classic` confinement if it qualifies
-  - [ ] Publish the confined snap in the Snap store beta channel
-  - [ ] Update the install instructions in this `README.md`
+  - [x] Update snap store metadata, icons and screenshots
+  - [x] Convert the snap to `strict` confinement, or `classic` confinement if it qualifies
+  - [x] Publish the confined snap in the Snap store beta channel
+  - [x] Update the install instructions in this `README.md`
   - [ ] Post a call for testing on the [Snapcraft Forum](https://forum.snapcraft.io) - [link]()
   - [ ] Make a post in the [Snapcraft Forum](https://forum.snapcraft.io) asking for a transfer of the snap name from you to snapcrafters - [link]()
   - [ ] Ask a [Snapcrafters admin](https://github.com/orgs/snapcrafters/people?query=%20role%3Aowner) to fork your repo into github.com/snapcrafters, and configure the repo for automatic publishing into edge on commit
