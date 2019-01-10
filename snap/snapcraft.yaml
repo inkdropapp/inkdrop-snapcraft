@@ -67,4 +67,10 @@ apps:
       - x11
       - password-manager-service
   ipm:
-    command: bin/desktop-launch $SNAP/usr/lib/inkdrop/resources/app/ipm/bin/ipm
+    command: usr/lib/inkdrop/resources/app/ipm/bin/ipm
+    plugs:
+      - gsettings
+      - home
+      - mount-observe
+      - network
+      - password-manager-service
