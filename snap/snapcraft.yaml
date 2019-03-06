@@ -35,6 +35,7 @@ parts:
       - libcanberra-gtk3-module
       - libgles2-mesa
       - libgnome-keyring0
+      - libgnome-keyring-common
       - libsecret-1-0
       - libglu1-mesa
       - libxkbfile1
