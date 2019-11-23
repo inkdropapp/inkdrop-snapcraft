@@ -4,8 +4,8 @@ description: |
   Inkdrop enables hackers to keep track of their daily progress when it comes to hacking in one convenient spot without having to rely on traditional word processors.
   Inkdrop features support for Markdown with the ability to do code syntax highlighting as well as built-in syncing capabilities.
   You can organize your progress in a clean, uniform way that's focused on ensuring that the information is easy to work through and can be read uniformly.
-
 grade: stable
+base: core18
 confinement: strict
 adopt-info: inkdrop
 
@@ -50,29 +50,35 @@ parts:
       - libpulse0
       - libxss1
       - libxtst6
-    after:
-      - desktop-gtk3
 
 apps:
   inkdrop:
-    command: bin/desktop-launch $SNAP/usr/bin/inkdrop
+    command: usr/bin/inkdrop
+    extensions: [gnome-3-28]
     desktop: usr/share/applications/inkdrop.desktop
     environment:
       TMPDIR: $XDG_RUNTIME_DIR
     plugs:
-      - browser-support
       - desktop
       - desktop-legacy
+      - wayland
+      - unity7
+      - alsa
+      - avahi-observe
+      - browser-support
+      - camera
+      - cups-control
       - gsettings
       - home
-      - mount-observe
       - network
       - opengl
+      - audio-playback
       - pulseaudio
-      - unity7
-      - wayland
-      - x11
-      - password-manager-service
+      - screen-inhibit-control
+      - upower-observe
+      # - mount-observe
+      # - x11
+      # - password-manager-service
   ipm:
     command: usr/lib/inkdrop/resources/app/ipm/bin/ipm
     plugs:
