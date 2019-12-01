@@ -53,7 +53,7 @@ parts:
 
 apps:
   inkdrop:
-    command: usr/bin/inkdrop
+    command: usr/bin/inkdrop --no-sandbox
     extensions: [gnome-3-28]
     desktop: usr/share/applications/inkdrop.desktop
     environment:
