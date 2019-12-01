@@ -76,9 +76,9 @@ apps:
       - pulseaudio
       - screen-inhibit-control
       - upower-observe
+      - password-manager-service
       # - mount-observe
       # - x11
-      # - password-manager-service
   ipm:
     command: usr/lib/inkdrop/resources/app/ipm/bin/ipm
     plugs:
