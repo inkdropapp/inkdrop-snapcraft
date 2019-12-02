@@ -15,7 +15,8 @@ architectures:
 parts:
   inkdrop:
     plugin: dump
-    source: https://api.inkdrop.app/download/linux/deb?pre=1
+    #source: https://api.inkdrop.app/download/linux/deb?pre=1
+    source: ./inkdrop_4.4.0_amd64-patch-1.deb
     source-type: deb
     override-pull: |
       set -x
@@ -30,26 +31,29 @@ parts:
       # Correct path to icon.
       grep Icon $SNAPCRAFT_PART_INSTALL/usr/share/applications/inkdrop.desktop
       sed -i 's|Icon=inkdrop|Icon=/usr/share/pixmaps/inkdrop\.png|g' ${SNAPCRAFT_PART_INSTALL}/usr/share/applications/inkdrop.desktop
+      sed -i 's|%U|--no-sandbox %U|' ${SNAPCRAFT_PART_INSTALL}/usr/share/applications/inkdrop.desktop
       grep Icon $SNAPCRAFT_PART_INSTALL/usr/share/applications/inkdrop.desktop
+    prime:
+      - -usr/lib/inkdrop/chrome-sandbox
     build-packages:
       - curl
     stage-packages:
       - libcanberra-gtk-module
       - libcanberra-gtk3-module
       - libgles2-mesa
-      - libgnome-keyring0
-      - libgnome-keyring-common
+      - gnome-keyring
       - libsecret-1-0
       - libglu1-mesa
       - libxkbfile1
       - libasound2
-      - libgconf2-4
+      #- libgconf-2-4
       - libnotify4
       - libnspr4
       - libnss3
       - libpulse0
       - libxss1
       - libxtst6
+      - libpcre2-8-0
 
 apps:
   inkdrop:
