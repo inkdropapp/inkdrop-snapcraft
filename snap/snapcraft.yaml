@@ -30,7 +30,10 @@ parts:
       # Correct path to icon.
       grep Icon $SNAPCRAFT_PART_INSTALL/usr/share/applications/inkdrop.desktop
       sed -i 's|Icon=inkdrop|Icon=/usr/share/pixmaps/inkdrop\.png|g' ${SNAPCRAFT_PART_INSTALL}/usr/share/applications/inkdrop.desktop
+      sed -i 's|%U|--no-sandbox %U|' ${SNAPCRAFT_PART_INSTALL}/usr/share/applications/inkdrop.desktop
       grep Icon $SNAPCRAFT_PART_INSTALL/usr/share/applications/inkdrop.desktop
+    prime:
+      - -usr/lib/inkdrop/chrome-sandbox
     build-packages:
       - curl
     stage-packages:
