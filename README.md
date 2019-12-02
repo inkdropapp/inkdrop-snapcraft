@@ -7,11 +7,9 @@
 <p align="center"><b>This is the snap for Inkdrop</b>, <i>“A note-taking app with robust Markdown editor”</i>. It works on Ubuntu, Fedora, Debian, and other major Linux
 distributions.</p>
 
-<!-- Uncomment and modify this when you are provided a build status badge
 <p align="center">
-<a href="https://build.snapcraft.io/user/snapcrafters/inkdrop"><img src="https://build.snapcraft.io/badge/snapcrafters/inkdrop.svg" alt="Snap Status"></a>
+  <a href="https://build.snapcraft.io/user/inkdropapp/inkdrop-snapcraft"><img src="https://build.snapcraft.io/badge/inkdropapp/inkdrop-snapcraft.svg" alt="Snap Status"></a>
 </p>
--->
 
 ![inkdrop](screenshot.png?raw=true "inkdrop")
 
