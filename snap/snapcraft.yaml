@@ -15,8 +15,8 @@ architectures:
 parts:
   inkdrop:
     plugin: dump
-    #source: https://api.inkdrop.app/download/linux/deb?pre=1
-    source: ./inkdrop_4.4.0_amd64-patch-1.deb
+    source: https://api.inkdrop.app/download/linux/deb?pre=1
+    #source: ./inkdrop_4.4.1_amd64.deb
     source-type: deb
     override-pull: |
       set -x
@@ -46,7 +46,6 @@ parts:
       - libglu1-mesa
       - libxkbfile1
       - libasound2
-      #- libgconf-2-4
       - libnotify4
       - libnspr4
       - libnss3
@@ -81,8 +80,6 @@ apps:
       - screen-inhibit-control
       - upower-observe
       - password-manager-service
-      # - mount-observe
-      # - x11
   ipm:
     command: usr/lib/inkdrop/resources/app/ipm/bin/ipm
     plugs:
