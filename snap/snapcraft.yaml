@@ -16,6 +16,7 @@ parts:
   inkdrop:
     plugin: dump
     source: https://api.inkdrop.app/download/linux/deb?pre=1
+    #source: ./inkdrop_4.4.1_amd64.deb
     source-type: deb
     override-pull: |
       set -x
@@ -40,19 +41,18 @@ parts:
       - libcanberra-gtk-module
       - libcanberra-gtk3-module
       - libgles2-mesa
-      - libgnome-keyring0
-      - libgnome-keyring-common
+      - gnome-keyring
       - libsecret-1-0
       - libglu1-mesa
       - libxkbfile1
       - libasound2
-      - libgconf2-4
       - libnotify4
       - libnspr4
       - libnss3
       - libpulse0
       - libxss1
       - libxtst6
+      - libpcre2-8-0
 
 apps:
   inkdrop:
@@ -80,8 +80,6 @@ apps:
       - screen-inhibit-control
       - upower-observe
       - password-manager-service
-      # - mount-observe
-      # - x11
   ipm:
     command: usr/lib/inkdrop/resources/app/ipm/bin/ipm
     plugs:
