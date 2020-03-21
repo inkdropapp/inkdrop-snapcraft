@@ -16,7 +16,7 @@ parts:
   inkdrop:
     plugin: dump
     #source: https://api.inkdrop.app/download/linux/deb?pre=1
-    source: https://inkdrop-dist.s3-ap-northeast-1.amazonaws.com/v4.6.1/inkdrop_4.6.0_amd64.deb
+    source: https://inkdrop-dist.s3-ap-northeast-1.amazonaws.com/v4.6.1/inkdrop_4.6.1_amd64.deb
     source-type: deb
     override-pull: |
       set -x
