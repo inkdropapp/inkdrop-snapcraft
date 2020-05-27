@@ -61,6 +61,7 @@ apps:
     extensions: [gnome-3-28]
     desktop: usr/share/applications/inkdrop.desktop
     environment:
+      DISABLE_WAYLAND: "1"
       TMPDIR: $XDG_RUNTIME_DIR
     plugs:
       - desktop
