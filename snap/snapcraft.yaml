@@ -58,7 +58,7 @@ parts:
 apps:
   inkdrop:
     command: usr/bin/inkdrop --no-sandbox
-    extensions: [gnome-3-28]
+    extensions: [gnome]
     desktop: usr/share/applications/inkdrop.desktop
     environment:
       DISABLE_WAYLAND: "1"
