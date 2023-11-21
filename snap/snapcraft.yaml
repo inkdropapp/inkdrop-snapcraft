@@ -5,7 +5,7 @@ description: |
   Inkdrop features support for Markdown with the ability to do code syntax highlighting as well as built-in syncing capabilities.
   You can organize your progress in a clean, uniform way that's focused on ensuring that the information is easy to work through and can be read uniformly.
 grade: stable
-base: core22
+base: core20
 confinement: strict
 adopt-info: inkdrop
 
@@ -58,7 +58,7 @@ parts:
 apps:
   inkdrop:
     command: usr/bin/inkdrop --no-sandbox
-    extensions: [gnome]
+    extensions: [gnome-3-38]
     desktop: usr/share/applications/inkdrop.desktop
     environment:
       DISABLE_WAYLAND: "1"
