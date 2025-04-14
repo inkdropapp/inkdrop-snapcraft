@@ -16,7 +16,7 @@ parts:
   inkdrop:
     plugin: dump
     #source: https://api.inkdrop.app/download/linux/deb?pre=1
-    source: https://inkdrop-dist.s3.ap-northeast-1.amazonaws.com/v5.11.1/inkdrop_5.11.1_amd64.deb
+    source: https://inkdrop-dist.s3.ap-northeast-1.amazonaws.com/v5.11.2/inkdrop_5.11.2_amd64.deb
     source-type: deb
     override-pull: |
       set -x
@@ -24,7 +24,7 @@ parts:
       #DEB_API="https://api.inkdrop.app/download/linux/deb?pre=1"
       #DEB_URL=$(curl -w "%{url_effective}\n" -I -L -s -S "${DEB_API}" -o /dev/null)
       #VERSION=$(echo "${DEB_URL}" | cut -d'/' -f4 | tr -d 'v')
-      VERSION="5.11.1"
+      VERSION="5.11.2"
       snapcraftctl set-version $VERSION
     override-build: |
       set -x
